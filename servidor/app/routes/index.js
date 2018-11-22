@@ -7,10 +7,15 @@ module.exports = function(application){
 			},
 			json: function(){
 				var retorno = {
-					body: "Bem vindo a sua app NodeJS!"
+					body: "Bem vindo a sua app NodeJS! Eu estou em JSON format!"
 				}
 				res.json(retorno);
 			}
 		});
+	});
+
+	application.post('/', function(req, res){
+		var dados = req.body;
+		res.send(dados)
 	});
 }
